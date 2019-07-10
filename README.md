@@ -2,15 +2,25 @@
 
 # music-generation
 
-Algorithmic music generation using RNN(Recurrent Neural Networks)
+Algorithmic music generation using Recurrent Neural Networks (RNNs,)
+The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a TimeDistributed Layer.
 
-Language used : Python 3.7.3
-
+## Addded the following features to the code
+- #### auto increment saved songs
+- #### ability to select weights file for generated song
+- #### Code restructure added wights and gen_songs folder
 
 ## Installation / Dependencies
-- lame
-- sox
 
+You need to install the following packages as dependencies. For more information visit the project websites
+
+- LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL [website][f25fc56f]
+- SoX - Sound eXchange, the Swiss Army knife of sound processing programs [website][43594682]
+
+  [f25fc56f]: http://lame.sourceforge.net "lame-website"
+  [43594682]: http://sox.sourceforge.net "sox-website"
+
+System DEPS
 
 Linux
 ```bash
@@ -18,60 +28,78 @@ apt install -y lame sox
 ```
 MacOS
 ```bash
-brew install lame 
+brew install lame
 brew install sox
 ```
 
-The following packages have to be installed before running this code:
+Windows
 
-1. TensorFlow
-2. Keras
-3. Numpy
-4. Matplotlib
-5. LAME
-6. SoX
+```bash
+cinst sox.portable
+```
 
-### Tested with:
-3.7.3 (default, Mar 27 2019, 16:54:48) 
-[Clang 4.0.1 (tags/RELEASE_401/final)]
-TensorFlow: 1.13.1
-Keras: 2.2.4
-Numpy: 1.16.4
+ython train.py -n 250 -e 5 -b 50
+ython train.py -n 250 -e 5 -b 50
+PYTHON Debs
 
-1. *Keras* version 2.2.4 with tensorflow backend
-2. *NumPy*  1.16.4
+The other dependencies are added to the requirements.txt file
 
+The rest of the dependencies can be installed with one of the two commands below.
+
+```
+pip install -r requirements.txt
+# or
+python -m pip install -r requirements.txt
+```
 
 and *SciPy* for various mathematical computation on tensors.
 3. *Matplotlib* for visualizing the input.
-4. *LAME* and *SoX* to convert mp3 files into other formats such as wav.
 
 ### Step 1: Check system setup
+
+Execute the following command in your command line:
+Your output should loke similar like the one below.
 
 ```bash
 python check_system_setup.py
 
 ```
+![check_sys](images/2019/07/check_system_setup.jpg)
 
-### Step 2: Converting the given mp3 files into np tensors
+### Step 2: Converting mp3 files
+#into np tensors
 
 Type the following command into the terminal:
 
 ``python convert_directory.py``
 
 
-This converts mp3 into mono files and then into WAV file, which is stored in the form of np-tensors. These np-tensors are given as input to our LSTM  model.
-By the end of this one can find these 2 files generated "YourMusicLibraryNP_x.npy", "YourMusicLibraryNP_y.npy".
-"YourMusicLibraryNP_x.npy" contains the input sequence for training and "YourMusicLibraryNP_y.npy" contains the same sequence as that of input sequence but shifted by one block.
+Converts mp3 --> mono files --> WAV file --> Numpy Tensors
+
+Numpy Tensors INPUT for our LSTM  model.
+
+The "np_array_x.npy" contains the input sequence for training
+And the "np_array_y.npy contains the same sequence but shifted by one block
+
 
 ### Step 3: Training the model
 
-Type the following command into the terminal:
+You can change the number of Iterations,
+Epochs per iteration and batch size by adjusting the following parameters:
 
-``python train.py``
+- n = Number of Iterations (default=5)
+- e = Epochs per iteration (default=3)
+- b = Batch Size (default=5) , higher Bach Size speeds up training but uses more Memory
 
-This builds a LSTM model that generates a sequence of notes which is compared against the expected output and the errors are back-propagated, thus adjusting the parameters learnt by the LSTM.
-You can change the number of Iterations, number of epochs per iteration and batch size by adjusting the following parameters "num_iters", "epochs_per_iter", "batch_size" respectively in train.py.
+To train your model type he following command into the terminal.
+The next arguments  added for an easier adjusting of the model.
+
+```bash
+python train.py -n 10 -e 5 -b 10
+```
+
+An LSTM model was build that generates a sequence of notes which is
+compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the LSTM.
 
 ## Step 4: Generating the music
 
@@ -80,6 +108,7 @@ Type the following command in your terminal':
 
 ``python generate.py``
 
-The generated WAV file is stored in a file named generated_song.wav.
+After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
-You can further read about the entire procedure involved in generating the music, in the following post that is there on this repository, **Blog_Post_Music_Gen_1.md**.
+The generated WAV file saved in the directory gen_songs/gengenerated_song.wav
+
