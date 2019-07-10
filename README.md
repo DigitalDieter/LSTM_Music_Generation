@@ -1,3 +1,6 @@
+This repository is based on the code https://github.com/unnati-xyz/music-generation
+
+
 [![Build Status](https://travis-ci.org/DigitalDieter/music-generation.svg?branch=master)](https://travis-ci.org/DigitalDieter/music-generation)
 
 # music-generation
