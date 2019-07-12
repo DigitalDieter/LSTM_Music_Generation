@@ -1,7 +1,0 @@
-inquirer
-config
-matplotlib
-numpy
-scipy
-tensorflow
-keras
