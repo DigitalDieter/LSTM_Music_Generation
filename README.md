@@ -67,7 +67,7 @@ Your output should loke similar like the one below.
 python check_system_setup.py
 
 ```
-![check_sys](images/2019/07/check_system_setup.jpg)
+![check_sys](img/check_system_setup.jpg)
 
 ### Step 2: Converting mp3 files
 #into np tensors
