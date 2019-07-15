@@ -49,13 +49,12 @@ Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 NUM_RECURR = 1
 
-print('Using Mean Absolute Error')
 # Creates a lstm network
-MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
+MODEL = network_utils.create_lstm_network(FREQ_SPACE_DIMS=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS,
                                           NUM_RECURRENT_UNITS=NUM_RECURR)
 
