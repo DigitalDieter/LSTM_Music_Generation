@@ -1,7 +1,10 @@
+from keras.layers import GRU
 from keras.models import Sequential
 from keras.layers.wrappers import TimeDistributed
 from keras.layers.core import Dense
 from keras.layers.recurrent import LSTM
+
+
 import config.nn_config as nn_config
 
 
