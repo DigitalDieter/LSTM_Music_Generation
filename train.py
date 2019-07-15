@@ -42,10 +42,13 @@ MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
 # Load up the training data
 print('Loading training data')
-# X_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
-# y_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
+
+# X_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 X_TRAIN = np.load(INPUTFILE + '_x.npy')
+
+# Y_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
+
 print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
@@ -78,7 +81,7 @@ while CUR_ITER < NUM_ITERS:
 
 print('Training complete!')
 MODEL.save_weights(WEIGHTS_PATH +".h5")
-p1 = plt.plot(range(len(LOSS)), LOSS)
+plt.plot(range(len(LOSS)), LOSS)
 plt.title(WEIGHTS_NAME)
 plt.xlabel('Iterations')
 plt.ylabel('Loss')
