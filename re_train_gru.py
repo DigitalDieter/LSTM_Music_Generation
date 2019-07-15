@@ -19,7 +19,7 @@ FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
-NUM_RECURR = 1
+NUM_RECURR = CONFIG['num_recurrent_units']
 
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=10,
@@ -30,7 +30,6 @@ parser.add_argument('-b', '--n_batch', type=int, default=5,
                     help='batchsize per iterations')
 
 args = parser.parse_args()
-
 
 NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
