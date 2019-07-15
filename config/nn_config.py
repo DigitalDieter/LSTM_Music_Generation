@@ -2,12 +2,11 @@ import os
 
 def get_neural_net_configuration():
     nn_params = {}
+    nn_params['num_frequency_dimensions'] = 22050
     nn_params['sampling_frequency'] = 44100
-
     nn_params['num_recurrent_units'] = 1
-    # Number of hidden dimensions.
-    # For best results, this should be >= freq_space_dims, but most consumer GPUs can't handle large sizes
     nn_params['hidden_dimension_size'] = 1024
+
     # The weights filename for saving/loading trained models
     nn_params['stateful'] = False
     if not os.path.exists('weights'):
