@@ -11,7 +11,6 @@ import config.nn_config as nn_config
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
-
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=5,
                     help='number of iterations')
@@ -65,7 +64,7 @@ weights_path = 'weights/NP_Weights_Iter-' + str(NUM_ITERS)
 
 
 
-LOSS_LIST = []
+LOSS = []
 
 
 while CUR_ITER < NUM_ITERS:
@@ -77,15 +76,15 @@ while CUR_ITER < NUM_ITERS:
     #loss_list += history.history['loss']
 
 
-    LOSS_LIST += HISTORY.history['loss']
+    LOSS += HISTORY.history['loss']
     with open('losslist.txt', 'a') as filehandle:
-        for listitem in LOSS_LIST:
+        for listitem in LOSS:
             filehandle.write('%s\n' % listitem)
     CUR_ITER += 1
 
 
 print('Training complete!')
 MODEL.save_weights(weights_path +".h5")
-p1 = plt.plot(range(len(LOSS_LIST)), LOSS_LIST)
+p1 = plt.plot(range(len(LOSS)), LOSS)
 plt.title(weights_path)
 plt.savefig(str(weights_path) + ".png")
