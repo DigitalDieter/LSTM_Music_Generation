@@ -14,7 +14,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 warnings.simplefilter("ignore")
 
 CONFIG = nn_config.get_neural_net_configuration()
-CUR_ITER = 0
+CUR_ITER = CONFIG['current_iteration']
 FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 INPUTFILE = CONFIG['model_file']
