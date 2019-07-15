@@ -2,8 +2,11 @@ import glob
 import os
 import re
 
-
 def saveSong():
+    if not os.path.exists('gen_songs'):
+        os.makedirs("gen_songs")
+    else:
+        pass
     currentSong = glob.glob("gen_songs/generated_song*.wav")
     numList = [0]
     for song in currentSong:
