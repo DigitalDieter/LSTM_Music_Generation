@@ -18,6 +18,7 @@ HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
+NUM_RECURR = CONFIG['num_recurrent_units']
 
 parser = argparse.ArgumentParser(description='Train model')
 
@@ -44,11 +45,6 @@ X_TRAIN = np.load(INPUTFILE + '_x.npy')
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 
 print('Finished loading training data')
-
-# Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-HIDDEN_DIMS = CONFIG['hidden_dimension_size']
-NUM_RECURR = 1
 
 # Creates a gru network
 MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
