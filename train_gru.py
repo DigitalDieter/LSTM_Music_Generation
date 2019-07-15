@@ -7,10 +7,20 @@ from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 warnings.filterwarnings("ignore", category=FutureWarning)
 
+CONFIG = nn_config.get_neural_net_configuration()
+CUR_ITER = 0
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+HIDDEN_DIMS = CONFIG['hidden_dimension_size']
+INPUTFILE = CONFIG['model_file']
+MODEL_BASENAME = CONFIG['model_basename']
+MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
+
 parser = argparse.ArgumentParser(description='Train model')
+
 parser.add_argument('-n', '--n_iter', type=int, default=10,
                     help='number of iterations')
 parser.add_argument('-e', '--n_epochs', type=int, default=5,
@@ -23,12 +33,6 @@ args = parser.parse_args()
 NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
 BATCH_SIZE = args.n_batch
-
-CUR_ITER = 0
-CONFIG = nn_config.get_neural_net_configuration()
-INPUTFILE = CONFIG['model_file']
-MODEL_BASENAME = CONFIG['model_basename']
-MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
 # Load up the training data
 print('Loading training data')
