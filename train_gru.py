@@ -13,9 +13,9 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 parser = argparse.ArgumentParser(description='Train model')
-parser.add_argument('-n', '--n_iter', type=int, default=5,
+parser.add_argument('-n', '--n_iter', type=int, default=10,
                     help='number of iterations')
-parser.add_argument('-e', '--n_epochs', type=int, default=3,
+parser.add_argument('-e', '--n_epochs', type=int, default=5,
                     help='epochs per iterations')
 parser.add_argument('-b', '--n_batch', type=int, default=5,
                     help='batchsize per iterations')
@@ -36,8 +36,6 @@ MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
 # Load up the training data
 print('Loading training data')
-# X_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
-# y_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
 X_TRAIN = np.load(INPUTFILE + '_x.npy')
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
