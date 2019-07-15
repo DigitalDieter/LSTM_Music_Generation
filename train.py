@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 from __future__ import print_function
-# __future__ is a module that supports code portability between different versions of Python.
 import argparse
 import os
 import glob
@@ -50,15 +49,13 @@ Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+#FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 NUM_RECURR = 1
 
-print('Using Mean Absolute Error')
 # Creates a lstm network
-
-#hidden_dims=1024
-MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
+MODEL = network_utils.create_lstm_network(FREQ_SPACE_DIMS=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS,
                                           NUM_RECURRENT_UNITS=NUM_RECURR)
 
@@ -77,7 +74,6 @@ LOSS = []
 
 while CUR_ITER < NUM_ITERS:
     print('Iteration: ' + str(CUR_ITER))
-    #HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1)
     HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1, validation_split=0.0)
     LOSS += HISTORY.history['loss']
     with open('lstm_losslist.txt', 'a') as filehandle:
