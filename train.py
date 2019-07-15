@@ -4,13 +4,14 @@ from __future__ import print_function
 import argparse
 import os
 import glob
+import warnings
 import inquirer
 from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-import warnings
+
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 parser = argparse.ArgumentParser(description='Train model')
@@ -53,7 +54,8 @@ print('Using Mean Absolute Error')
 
 #hidden_dims=1024
 MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
-                                          NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS, NUM_RECURRENT_UNITS=NUM_RECURR)
+                                          NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS,
+                                          NUM_RECURRENT_UNITS=NUM_RECURR)
 
 
 
