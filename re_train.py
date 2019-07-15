@@ -48,11 +48,6 @@ X_TRAIN = np.load(INPUTFILE + '_x.npy')
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
 
-# Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-HIDDEN_DIMS = CONFIG['hidden_dimension_size']
-NUM_RECURR = 1
-
 # Creates a lstm network
 MODEL = network_utils.create_lstm_network(FREQ_SPACE_DIMS=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS,
@@ -67,7 +62,13 @@ MODEL_WEIGTHS = [
 ]
 
 CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+HIDDEN_DIMS = CONFIG['hidden_dimension_size']
+INPUTFILE = CONFIG['model_file']
+MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = CHOOSE_MODEL["size"]
+NUM_RECURR = 1
+
 
 # Load existing weights if available
 if os.path.isfile(MODEL_FILENAME):
@@ -92,7 +93,7 @@ while CUR_ITER < NUM_ITERS:
 
 print('Training complete!')
 MODEL.save_weights(WEIGHTS_PATH +".h5")
-p1 = plt.plot(range(len(LOSS)), LOSS)
+plt.plot(range(len(LOSS)), LOSS)
 plt.title(WEIGHTS_NAME)
 plt.xlabel('Iterations')
 plt.ylabel('Loss')
