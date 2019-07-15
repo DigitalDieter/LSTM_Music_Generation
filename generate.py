@@ -68,6 +68,7 @@ HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS, NUM_RECURRENT_UNITS=1)
 
+
 # Load existing weights if available
 if os.path.exists(MODEL_FILENAME):
     MODEL.load_weights(MODEL_FILENAME)
