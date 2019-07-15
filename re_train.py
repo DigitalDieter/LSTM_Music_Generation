@@ -9,14 +9,17 @@ from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
-
-#warnings.filterwarnings("ignore", category=FutureWarning)
-#warnings.filterwarnings("ignore", category=DeprecationWarning)
 warnings.simplefilter("ignore")
-#DeprecationWarning
 
+CONFIG = nn_config.get_neural_net_configuration()
+CUR_ITER = CONFIG['current_iteration']
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+HIDDEN_DIMS = CONFIG['hidden_dimension_size']
+INPUTFILE = CONFIG['model_file']
+MODEL_BASENAME = CONFIG['model_basename']
+NUM_RECURR = 1
 
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=5,
@@ -32,15 +35,6 @@ args = parser.parse_args()
 NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
 BATCH_SIZE = args.n_batch
-
-
-CONFIG = nn_config.get_neural_net_configuration()
-FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-HIDDEN_DIMS = CONFIG['hidden_dimension_size']
-INPUTFILE = CONFIG['model_file']
-CUR_ITER = 0
-MODEL_BASENAME = CONFIG['model_basename']
-NUM_RECURR = 1
 
 # Load up the training data
 print('Loading training data')
@@ -67,12 +61,7 @@ MODEL_WEIGTHS = [
 ]
 
 CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
-FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-HIDDEN_DIMS = CONFIG['hidden_dimension_size']
-INPUTFILE = CONFIG['model_file']
-MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = CHOOSE_MODEL["size"]
-NUM_RECURR = 1
 
 # Load existing weights if available
 if os.path.isfile(MODEL_FILENAME):
