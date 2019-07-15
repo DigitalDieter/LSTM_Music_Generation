@@ -35,17 +35,22 @@ BATCH_SIZE = args.n_batch
 
 
 CONFIG = nn_config.get_neural_net_configuration()
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 INPUTFILE = CONFIG['model_file']
 CUR_ITER = 0
 MODEL_BASENAME = CONFIG['model_basename']
-#MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
+NUM_RECURR = 1
 
 # Load up the training data
 print('Loading training data')
-# X_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
-# y_train is a tensor of size (num_train_examples, num_timesteps, num_frequency_dims)
+
+# X_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 X_TRAIN = np.load(INPUTFILE + '_x.npy')
+
+# Y_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
+
 print('Finished loading training data')
 
 # Creates a lstm network
@@ -68,7 +73,6 @@ INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = CHOOSE_MODEL["size"]
 NUM_RECURR = 1
-
 
 # Load existing weights if available
 if os.path.isfile(MODEL_FILENAME):
