@@ -1,9 +1,10 @@
-
 from __future__ import absolute_import
 from __future__ import print_function
 # __future__ is a module that supports code portability between different versions of Python.
 import argparse
 import os
+import glob
+import inquirer
 from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
@@ -32,7 +33,7 @@ CONFIG = nn_config.get_neural_net_configuration()
 INPUTFILE = CONFIG['model_file']
 CUR_ITER = 0
 MODEL_BASENAME = CONFIG['model_basename']
-MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
+#MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
 # Load up the training data
 print('Loading training data')
@@ -53,6 +54,19 @@ print('Using Mean Absolute Error')
 #hidden_dims=1024
 MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS, NUM_RECURRENT_UNITS=NUM_RECURR)
+
+
+
+MODEL_WEIGTHS = [
+    inquirer.List('size',
+                  message="Please choose saved weights file for generating the song",
+                  choices=glob.glob('weights/LSTM*.h5')
+                  ),
+]
+
+CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
+
+MODEL_FILENAME = CHOOSE_MODEL["size"]
 
 
 # Load existing weights if available
