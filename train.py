@@ -50,7 +50,6 @@ print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
 FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-#FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 NUM_RECURR = 1
 
