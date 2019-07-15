@@ -1,6 +1,5 @@
 from __future__ import absolute_import
 from __future__ import print_function
-# __future__ is a module that supports code portability between different versions of Python.
 import argparse
 import os
 import warnings
@@ -21,16 +20,13 @@ parser.add_argument('-b', '--n_batch', type=int, default=5,
 
 args = parser.parse_args()
 
-
 NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
 BATCH_SIZE = args.n_batch
 
-
-CONFIG = nn_config.get_neural_net_configuration()
-
-INPUTFILE = CONFIG['model_file']
 CUR_ITER = 0
+CONFIG = nn_config.get_neural_net_configuration()
+INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
@@ -42,18 +38,12 @@ Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 NUM_RECURR = 1
 
-print('Using Mean Absolute Error')
 # Creates a gru network
-
-#def create_gru_network(num_frequency_dimensions, num_hidden_dimensions):
-
-#hidden_dims=1024
 MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
-
 
 # Load existing weights if available
 if os.path.isfile(MODEL_FILENAME):
