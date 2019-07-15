@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 from __future__ import print_function
 import glob
-import re
 import os
 import numpy as np
 import inquirer
@@ -11,9 +10,6 @@ import gen_utils.sequence_generator as sequence_generator
 from gen_utils.filename_generator import saveSong
 from data_utils.parse_files import save_generated_example
 import config.nn_config as nn_config
-import tensorflow.python.util.deprecation as deprecation
-deprecation._PRINT_DEPRECATION_WARNINGS = False
-
 
 #os.environ['TF_CPP_MIN_LOG_LEVEL'] = '0'
 CONFIG = nn_config.get_neural_net_configuration()
@@ -65,8 +61,7 @@ FREQ_SPACE_DIMS = X_TRAIN.shape[2]
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 
 # Creates a gru network
-MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
-                                          NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
+MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
 # Load existing weights if available
 if os.path.exists(MODEL_FILENAME):
     MODEL.load_weights(MODEL_FILENAME)
