@@ -12,7 +12,12 @@ import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-warnings.filterwarnings("ignore", category=FutureWarning)
+
+#warnings.filterwarnings("ignore", category=FutureWarning)
+#warnings.filterwarnings("ignore", category=DeprecationWarning)
+warnings.simplefilter("ignore")
+#DeprecationWarning
+
 
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=5,
