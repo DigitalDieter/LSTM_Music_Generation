@@ -30,7 +30,6 @@ INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
-
 # Load up the training data
 print('Loading training data')
 X_TRAIN = np.load(INPUTFILE + '_x.npy')
@@ -45,24 +44,16 @@ NUM_RECURR = 1
 # Creates a gru network
 MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
 
-# Load existing weights if available
-if os.path.isfile(MODEL_FILENAME):
-    MODEL.load_weights(MODEL_FILENAME)
-
-
 # Larger batch sizes require more memory, but training will be faster
 print('Starting training!')
-weights_path = 'weights/GRU_NP_Weights_Iter-' + str(NUM_ITERS)
-weights_name = 'GRU_NP_Weights_Iter-' + str(NUM_ITERS)
+WEIGHTS_PATH = 'weights/GRU_NP_Weights_Iter-' + str(NUM_ITERS)
+WEIGHTS_NAME = 'GRU_NP_Weights_Iter-' + str(NUM_ITERS)
 
 LOSS = []
 
 while CUR_ITER < NUM_ITERS:
     print('Iteration: ' + str(CUR_ITER))
-    #HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1)
     HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1, validation_split=0.0)
-    #loss_list += history.history['loss']
-
     LOSS += HISTORY.history['loss']
     with open('gru_losslist.txt', 'a') as filehandle:
         for listitem in LOSS:
@@ -71,9 +62,9 @@ while CUR_ITER < NUM_ITERS:
 
 
 print('Training complete!')
-MODEL.save_weights(weights_path +".h5")
+MODEL.save_weights(WEIGHTS_PATH +".h5")
 p1 = plt.plot(range(len(LOSS)), LOSS)
-plt.title(weights_name)
+plt.title(WEIGHTS_NAME)
 plt.xlabel('Iterations')
 plt.ylabel('Loss')
-plt.savefig(str(weights_path) + ".png")
+plt.savefig(str(WEIGHTS_PATH) + ".png")
