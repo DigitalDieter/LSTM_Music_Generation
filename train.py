@@ -71,7 +71,7 @@ MODEL_WEIGTHS = [
                   ),
 ]
 
-CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
+#CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
 
 #MODEL_FILENAME = CHOOSE_MODEL["size"]
 
