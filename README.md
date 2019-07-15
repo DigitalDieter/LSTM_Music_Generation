@@ -35,15 +35,6 @@ brew install lame
 brew install sox
 ```
 
-Windows
-
-```bash
-cinst sox.portable
-```
-
-ython train.py -n 250 -e 5 -b 50
-ython train.py -n 250 -e 5 -b 50
-PYTHON Debs
 
 The other dependencies are added to the requirements.txt file
 
