@@ -1,9 +1,8 @@
 from __future__ import absolute_import
 from __future__ import print_function
-# __future__ is a module that supports code portability between different versions of Python.
 import argparse
-import os
 import glob
+import os
 import warnings
 import inquirer
 from matplotlib import pyplot as plt
