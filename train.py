@@ -62,8 +62,8 @@ if os.path.isfile(MODEL_FILENAME):
 
 # Larger batch sizes require more memory, but training will be faster
 print('Starting training!')
-weights_path = 'weights/NP_Weights_Iter-' + str(NUM_ITERS)
-weights_name = 'NP_Weights_Iter-' + str(NUM_ITERS)
+weights_path = 'weights/LSTM_NP_Weights_Iter-' + str(NUM_ITERS)
+weights_name = 'LSTM_NP_Weights_Iter-' + str(NUM_ITERS)
 
 
 LOSS = []
