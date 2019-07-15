@@ -1,6 +1,6 @@
+import sys
 import keras as K
 import numpy as np
-import sys
 import tensorflow as tf
 
 # print python verion
