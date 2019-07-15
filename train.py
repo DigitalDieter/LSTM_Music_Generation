@@ -39,7 +39,7 @@ CONFIG = nn_config.get_neural_net_configuration()
 INPUTFILE = CONFIG['model_file']
 CUR_ITER = 0
 MODEL_BASENAME = CONFIG['model_basename']
-#MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
+MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
 
 # Load up the training data
 print('Loading training data')
@@ -73,7 +73,7 @@ MODEL_WEIGTHS = [
 
 CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
 
-MODEL_FILENAME = CHOOSE_MODEL["size"]
+#MODEL_FILENAME = CHOOSE_MODEL["size"]
 
 
 # Load existing weights if available
