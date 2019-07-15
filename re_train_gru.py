@@ -29,7 +29,7 @@ NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
 BATCH_SIZE = args.n_batch
 
-
+CUR_ITER = 0
 CONFIG = nn_config.get_neural_net_configuration()
 
 MODEL_WEIGTHS = [
@@ -40,13 +40,9 @@ MODEL_WEIGTHS = [
 ]
 
 CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
-
-MODEL_FILENAME = CHOOSE_MODEL["size"]
-
 INPUTFILE = CONFIG['model_file']
-CUR_ITER = 0
 MODEL_BASENAME = CONFIG['model_basename']
-
+MODEL_FILENAME = CHOOSE_MODEL["size"]
 
 # Load up the training data
 print('Loading training data')
@@ -55,16 +51,11 @@ Y_TRAIN = np.load(INPUTFILE + '_y.npy')
 print('Finished loading training data')
 
 # Figure out how many frequencies we have in the data
-FREQ_SPACE_DIMS = X_TRAIN.shape[2] #88200
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
 HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 NUM_RECURR = 1
 
-print('Using Mean Absolute Error')
 # Creates a gru network
-
-#def create_gru_network(num_frequency_dimensions, num_hidden_dimensions):
-
-#hidden_dims=1024
 MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
 
 
