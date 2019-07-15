@@ -9,10 +9,17 @@ from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
+
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+warnings.simplefilter("ignore")
 
-
-warnings.filterwarnings("ignore", category=FutureWarning)
+CONFIG = nn_config.get_neural_net_configuration()
+CUR_ITER = CONFIG['current_iteration']
+FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
+HIDDEN_DIMS = CONFIG['hidden_dimension_size']
+INPUTFILE = CONFIG['model_file']
+MODEL_BASENAME = CONFIG['model_basename']
+NUM_RECURR = 1
 
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=10,
@@ -29,8 +36,6 @@ NUM_ITERS = args.n_iter
 EPOCHS_PER_ITER = args.n_epochs
 BATCH_SIZE = args.n_batch
 
-CUR_ITER = 0
-CONFIG = nn_config.get_neural_net_configuration()
 
 MODEL_WEIGTHS = [
     inquirer.List('size',
@@ -40,17 +45,17 @@ MODEL_WEIGTHS = [
 ]
 
 CHOOSE_MODEL = inquirer.prompt(MODEL_WEIGTHS)
-FREQ_SPACE_DIMS = CONFIG['num_frequency_dimensions']
-HIDDEN_DIMS = CONFIG['hidden_dimension_size']
-INPUTFILE = CONFIG['model_file']
-MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = CHOOSE_MODEL["size"]
-NUM_RECURR = 1
 
 # Load up the training data
 print('Loading training data')
+
+# X_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 X_TRAIN = np.load(INPUTFILE + '_x.npy')
+
+# Y_TRAIN Numpy tensor (num_train_examples, num_timesteps, num_frequency_dims)
 Y_TRAIN = np.load(INPUTFILE + '_y.npy')
+
 print('Finished loading training data')
 
 # Creates a gru network
