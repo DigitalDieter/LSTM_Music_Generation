@@ -20,7 +20,7 @@ HIDDEN_DIMS = CONFIG['hidden_dimension_size']
 INPUTFILE = CONFIG['model_file']
 MODEL_BASENAME = CONFIG['model_basename']
 MODEL_FILENAME = MODEL_BASENAME + str(CUR_ITER)
-NUM_RECURR = 1
+NUM_RECURR = CONFIG['num_recurrent_units']
 
 parser = argparse.ArgumentParser(description='Train model')
 
