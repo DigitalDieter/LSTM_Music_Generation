@@ -6,11 +6,8 @@ import argparse
 import os
 from matplotlib import pyplot as plt
 import numpy as np
-import tensorflow.python.util.deprecation as deprecation
-#import tensorflow.python.util.deprecation
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
-deprecation._PRINT_DEPRECATION_WARNINGS = False
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
