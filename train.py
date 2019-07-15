@@ -59,11 +59,6 @@ MODEL = network_utils.create_lstm_network(FREQ_SPACE_DIMS=FREQ_SPACE_DIMS,
                                           NUM_RECURRENT_UNITS=NUM_RECURR)
 
 
-# Load existing weights if available
-if os.path.isfile(MODEL_FILENAME):
-    MODEL.load_weights(MODEL_FILENAME)
-
-
 # Larger batch sizes require more memory, but training will be faster
 print('Starting training!')
 WEIGHTS_PATH = 'weights/LSTM_NP_Weights_Iter-' + str(NUM_ITERS)
