@@ -37,3 +37,13 @@ def create_lstm_network(num_frequency_dimensions, NUM_HIDDEN_DIMENSIONS, NUM_REC
     #model.compile(loss='mean_squared_error', optimizer='rmsprop')
     return model
 
+
+def create_gru_network(num_frequency_dimensions, NUM_HIDDEN_DIMENSIONS):
+    model = Sequential()
+    # This layer converts frequency space to hidden space
+    model.add(TimeDistributed(Dense(NUM_HIDDEN_DIMENSIONS), input_shape=(None, num_frequency_dimensions)))
+    model.add(GRU(units=NUM_HIDDEN_DIMENSIONS, return_sequences=True))
+    # This layer converts hidden space back to frequency space
+    model.add(TimeDistributed(Dense(num_frequency_dimensions)))
+    model.compile(loss='mean_squared_error', optimizer='rmsprop')
+    return model
