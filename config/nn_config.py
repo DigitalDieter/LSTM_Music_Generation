@@ -2,6 +2,7 @@ import os
 
 def get_neural_net_configuration():
     nn_params = {}
+    nn_params['current_iteration'] = 0
     nn_params['num_frequency_dimensions'] = 22050
     nn_params['sampling_frequency'] = 44100
     nn_params['num_recurrent_units'] = 1
