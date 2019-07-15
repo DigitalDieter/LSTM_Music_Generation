@@ -1,17 +1,17 @@
-
 from __future__ import absolute_import
 from __future__ import print_function
 # __future__ is a module that supports code portability between different versions of Python.
 import argparse
 import os
 import glob
+import warnings
+
 import inquirer
 from matplotlib import pyplot as plt
 import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 parser = argparse.ArgumentParser(description='Train model')
@@ -63,10 +63,8 @@ print('Using Mean Absolute Error')
 
 #def create_gru_network(num_frequency_dimensions, num_hidden_dimensions):
 
-
 #hidden_dims=1024
-MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
-                                          NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
+MODEL = network_utils.create_gru_network(num_frequency_dimensions=FREQ_SPACE_DIMS, NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS)
 
 
 # Load existing weights if available
@@ -79,9 +77,7 @@ print('Starting training!')
 weights_path = 'weights/GRU_NP_Weights_Iter-' + str(NUM_ITERS)
 weights_name = 'GRU_NP_Weights_Iter-' + str(NUM_ITERS)
 
-
 LOSS = []
-
 
 while CUR_ITER < NUM_ITERS:
     print('Iteration: ' + str(CUR_ITER))
