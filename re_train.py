@@ -82,7 +82,6 @@ LOSS = []
 
 while CUR_ITER < NUM_ITERS:
     print('Iteration: ' + str(CUR_ITER))
-    #HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1)
     HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1, validation_split=0.0)
     LOSS += HISTORY.history['loss']
     with open('lstm_losslist.txt', 'a') as filehandle:
