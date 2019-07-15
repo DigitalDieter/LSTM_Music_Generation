@@ -9,7 +9,8 @@ import numpy as np
 import nn_utils.network_utils as network_utils
 import config.nn_config as nn_config
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
-
+import warnings
+warnings.filterwarnings("ignore", category=FutureWarning)
 
 parser = argparse.ArgumentParser(description='Train model')
 parser.add_argument('-n', '--n_iter', type=int, default=5,
@@ -53,6 +54,7 @@ print('Using Mean Absolute Error')
 MODEL = network_utils.create_lstm_network(num_frequency_dimensions=FREQ_SPACE_DIMS,
                                           NUM_HIDDEN_DIMENSIONS=HIDDEN_DIMS, NUM_RECURRENT_UNITS=NUM_RECURR)
 
+
 # Load existing weights if available
 if os.path.isfile(MODEL_FILENAME):
     MODEL.load_weights(MODEL_FILENAME)
@@ -74,7 +76,7 @@ while CUR_ITER < NUM_ITERS:
     #loss_list += history.history['loss']
 
     LOSS += HISTORY.history['loss']
-    with open('losslist.txt', 'a') as filehandle:
+    with open('lstm_losslist.txt', 'a') as filehandle:
         for listitem in LOSS:
             filehandle.write('%s\n' % listitem)
     CUR_ITER += 1
