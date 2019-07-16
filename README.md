@@ -23,7 +23,6 @@ You need to install the following packages as dependencies. For more information
   [f25fc56f]: http://lame.sourceforge.net "lame-website"
   [43594682]: http://sox.sourceforge.net "sox-website"
 
-System DEPS
 
 Linux
 ```bash
@@ -89,9 +88,23 @@ Epochs per iteration and batch size by adjusting the following parameters:
 To train your model type he following command into the terminal.
 The next arguments  added for an easier adjusting of the model.
 
+### LSTM
 ```bash
 python train.py -n 10 -e 5 -b 10
 ```
+```bash
+python re_train.py -n 10 -e 5 -b 10
+```
+
+### GRU
+```bash
+python train_gru.py -n 10 -e 5 -b 10
+```
+
+```bash
+python re_train_gru.py -n 10 -e 5 -b 10
+```
+
 
 An LSTM model was build that generates a sequence of notes which is
 compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the LSTM.
