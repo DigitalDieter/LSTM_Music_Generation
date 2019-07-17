@@ -89,20 +89,24 @@ To train your model type he following command into the terminal.
 The next arguments  added for an easier adjusting of the model.
 
 ### LSTM
+For training the model, execute the train.py as described below:
+
 ```bash
 python train.py -n 10 -e 5 -b 10
 ```
 ```bash
-python re_train.py -n 10 -e 5 -b 10
+python re_train.py
 ```
 
 ### GRU
+For training the model, execute the train_gru.py as described below:
+
 ```bash
 python train_gru.py -n 10 -e 5 -b 10
 ```
 
 ```bash
-python re_train_gru.py -n 10 -e 5 -b 10
+python re_train_gru.py
 ```
 
 
