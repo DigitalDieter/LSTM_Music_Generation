@@ -18,9 +18,9 @@ The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a Tim
 
 - Function extension to generate the song with specific weight file.
 
+- Code restructure that save the outputs to own folders
 
-- Code restructure added wights and gen_songs folder
-- Plotting and Saving loss for each training as picture in the weigts path
+- Plotting and saving the loss for each training as a picture in the weight's path
 
 - re_train.py add to retrain the modle
 
