@@ -109,7 +109,7 @@ python train.py -n 10 -e 5 -b 10
 python re_train.py
 ```
 
-![lstm_model](/images/2019/07/lstm_model_plot.png)
+![lstm_model](/img/lstm_model_plot.png)
 
 ### GRU
 For training the model, execute the train_gru.py as described below:
