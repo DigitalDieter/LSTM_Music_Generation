@@ -12,19 +12,17 @@ The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a Tim
 
 - Every new generated song will be auto incremented saved. No more editing of the generated song in the generation scipt needed
 
-- Extended the train scripts mit arguments
--n num iters
--e epochs per iter
--b batch size
+- Extension of the training script with "argparse" parameters for easier handling
+
+- Function extension to retrain the model to a specific weight file.
+
+- Function extension to generate the song with specific weight file.
 
 
-- ability to retrain the model on a specific a specific weights file
-
-- ability to select a specific weights file for generating the song
-Code restructure added wights and gen_songs folder
+- Code restructure added wights and gen_songs folder
 - Plotting and Saving loss for each training as picture in the weigts path
 
-- re_train.py add to retrain the modle 
+- re_train.py add to retrain the modle
 
 ## Installation / Dependencies
 
