@@ -8,21 +8,23 @@ This repository is based on the code https://github.com/unnati-xyz/music-generat
 Algorithmic music generation using Recurrent Neural Networks (RNNs,)
 The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a TimeDistributed Layer.
 
-### Addded the following features /  little imporvments to the project to the code
-##### Every new generated song will be auto incremented saved. No more number editing of the generated song in the generation scipt needed
+##### Addded the following features /  little imporvments to the project:
 
-##### Extended the train scripts mit arguments
+- Every new generated song will be auto incremented saved. No more editing of the generated song in the generation scipt needed
+
+- Extended the train scripts mit arguments
 -n num iters
 -e epochs per iter
 -b batch size
 
 
-##### ability to retrain the model on a specific a specific weights file
+- ability to retrain the model on a specific a specific weights file
 
-##### ability to select a specific weights file for generating the song
-##### Code restructure added wights and gen_songs folder
+- ability to select a specific weights file for generating the song
+Code restructure added wights and gen_songs folder
 - Plotting and Saving loss for each training as picture in the weigts path
 
+- re_train.py add to retrain the modle 
 
 ## Installation / Dependencies
 
