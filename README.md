@@ -105,6 +105,7 @@ For training the model, execute the train.py as described below:
 ```bash
 python train.py -n 10 -e 5 -b 10
 ```
+The model now can be retrained you have to selected the weights file from which the training of the model continues.
 ```bash
 python re_train.py
 ```
@@ -117,6 +118,10 @@ For training the model, execute the train_gru.py as described below:
 ```bash
 python train_gru.py -n 10 -e 5 -b 10
 ```
+
+The model now can be retrained you have to selected the weights file from which the training of the model continues.
+You can add the same arguments as the train.py script.
+The re_train.py script contains the same default as the normal train.script
 
 ```bash
 python re_train_gru.py
