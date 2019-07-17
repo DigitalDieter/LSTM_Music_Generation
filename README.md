@@ -13,15 +13,10 @@ The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a Tim
 - Every new generated song will be auto incremented saved. No more editing of the generated song in the generation scipt needed
 
 - Extension of the training script with "argparse" parameters for easier handling
-
 - Function extension to retrain the model to a specific weight file.
-
 - Function extension to generate the song with specific weight file.
-
 - Code restructure that save the outputs to own folders
-
 - Plotting and saving the loss for each training as a picture in the weight's path
-
 - re_train.py add to retrain the modle
 
 ## Installation / Dependencies
