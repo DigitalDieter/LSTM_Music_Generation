@@ -65,7 +65,7 @@ Your output should loke similar like the one below.
 python check_system_setup.py
 
 ```
-![check_sys](img/check-sys_setup.pngj
+![check_sys](img/check-sys_setup.png)
 
 
 ### Step 2: Converting mp3 files
