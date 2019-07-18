@@ -135,4 +135,4 @@ Type the following command in your terminal':
 
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
-The generated WAV file saved in the directory gen_songs/generated_song.wav
+The generated WAV files saved in the directory gen_songs/generated_song1.wav
