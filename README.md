@@ -7,6 +7,11 @@ This repository is based on the code https://github.com/unnati-xyz/music-generat
 Algorithmic music generation using Recurrent Neural Networks (RNNs,)
 The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a TimeDistributed Layer.
 
+The original code was using Python 3.5, Keras version 0.1.0 and the Theano backend.
+The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4
+
+The python code was modifiyed to run on python 3.7  Tensorflow
+
 ##### Addded the following features /  little imporvments to the project:
 
 - Every new generated song will be auto incremented saved. No more editing of the generated song in the generation scipt needed
