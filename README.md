@@ -47,7 +47,7 @@ The other dependencies are added to the requirements.txt file
 
 The rest of the dependencies can be installed with one of the two commands below.
 
-```
+```bash
 pip install -r requirements.txt
 # or
 python -m pip install -r requirements.txt
@@ -65,7 +65,6 @@ Your output should loke similar like the one below.
 python check_system_setup.py
 
 ```
-![check_sys](img/check-sys_setup.png)
 
 
 ### Step 2: Converting mp3 files
@@ -73,8 +72,11 @@ python check_system_setup.py
 
 Type the following command into the terminal:
 
-``python convert_directory.py``
+```bash
+python convert_directory.py``
+```
 
+![check_sys](img/convert_directory.png)
 
 Converts mp3 --> mono files --> WAV file --> Numpy Tensors
 
@@ -124,7 +126,6 @@ The re_train.py script contains the same default as the normal train.script
 python re_train_gru.py
 ```
 
-
 An LSTM model was build that generates a sequence of notes which is
 compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the LSTM.
 
@@ -133,7 +134,10 @@ compared against the expected output and the errors are back-propagated, thus ad
 Now that you've finished training the model, its time to generate some music:)
 Type the following command in your terminal':
 
-``python generate.py``
+```bash
+python generate.py
+```
+
 
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
