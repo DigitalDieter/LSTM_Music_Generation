@@ -44,7 +44,6 @@ brew install lame
 brew install sox
 ```
 
-
 The other dependencies are added to the requirements.txt file and can be installed with one of the two commands below.
 
 
@@ -54,8 +53,7 @@ pip install -r requirements.txt
 python -m pip install -r requirements.txt
 ```
 
-and *SciPy* for various mathematical computation on tensors.
-3. *Matplotlib* for visualizing the input.
+
 
 ### Step 1: Check system setup
 
