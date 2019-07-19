@@ -154,6 +154,7 @@ Type the following command in your terminal':
 ```bash
 python generate.py
 ```
+![GEN_MUSIC](img/chooe_file_for_gen_music.png)
 
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
