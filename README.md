@@ -146,6 +146,8 @@ Type the following command in your terminal':
 python generate.py
 ```
 
+# Visualized GRU model
+![GRU_Model](/img/gru_model_plot.png)
 
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
