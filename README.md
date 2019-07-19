@@ -60,6 +60,8 @@ python -m pip install -r requirements.txt
 Execute the following command in your command line:
 Your output should loke similar like the one below.
 
+![check_system_setup](/img/check-sys_setup.png)
+
 ```bash
 python check_system_setup.py
 
@@ -110,6 +112,7 @@ The model now can be retrained, you have to selected the weights file from which
 python re_train.py
 ```
 
+# Visualized LSTM model
 ![lstm_model](/img/lstm_model_plot.png)
 
 ### GRU
