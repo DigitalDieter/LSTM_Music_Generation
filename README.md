@@ -164,15 +164,19 @@ After executing the generation, you have to select the Numpy weights file from w
 
 The generated WAV files saved in the directory gen_songs/generated_song1.wav
 
-Plots after specific number of iteration
+WAV Plots of the generated songs after specific number of iterations:
 
 Generated song after 10 iterations
 ![gen_song1](img/generated_song1.png)
+
 Generated song after 25 iterations
 ![gen_song2](img/generated_song2.png)
+
 Generated song after 50 iterations
 ![gen_song3](img/generated_song3.png)
+
 Generated song after 100 iterations
 ![gen_song4](img/generated_song4.png)
+
 Generated song after 200 iterations
 ![gen_song5](img/generated_song5.png)
