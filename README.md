@@ -140,6 +140,10 @@ The re_train.py script contains the same default as the normal train.script
 python re_train_gru.py
 ```
 
+![GEN_MUSIC](img/chooe_file_for_gen_music.png)
+
+After executing the re_train script, you have to select the Numpy weights file which is used as inout for retraining (use arrow keys for selecting)
+
 # Visualized GRU model
 ![GRU_Model](/img/gru_model_plot.png)
 
