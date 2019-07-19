@@ -45,9 +45,8 @@ brew install sox
 ```
 
 
-The other dependencies are added to the requirements.txt file
+The other dependencies are added to the requirements.txt file and can be installed with one of the two commands below.
 
-The rest of the dependencies can be installed with one of the two commands below.
 
 ```bash
 pip install -r requirements.txt
