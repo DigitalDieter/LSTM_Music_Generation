@@ -4,6 +4,7 @@ This repository is based on the code https://github.com/unnati-xyz/music-generat
 
 # lstm music-generation
 
+
 Algorithmic music generation using Recurrent Neural Networks (RNNs,)
 The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a TimeDistributed Layer.
 
@@ -20,6 +21,7 @@ The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4 on Python 3.7.3
 - Code restructure that save the outputs to own folders
 - Plotting and saving the loss for each training as a picture in the weight's path
 - re_train.py add to retrain the modle
+- GRU model added
 
 ## Installation / Dependencies
 
@@ -95,16 +97,18 @@ Epochs per iteration and batch size by adjusting the following parameters:
 - e = Epochs per iteration (default=3)
 - b = Batch Size (default=5) , higher Bach Size speeds up training but uses more Memory
 
-To train your model type he following command into the terminal.
-The next arguments  added for an easier adjusting of the model.
-
 ### LSTM
-For training the model, execute the train.py as described below:
+Long Short Term Memory
+
+For training the LSTM model, execute the train.py as described below:
 
 ```bash
 python train.py -n 10 -e 5 -b 10
 ```
-The model now can be retrained you have to selected the weights file from which the training of the model continues.
+
+![train](/img/train.png)
+
+The model now can be retrained, you have to selected the weights file from which the training of the model continues.
 ```bash
 python re_train.py
 ```
@@ -112,13 +116,17 @@ python re_train.py
 ![lstm_model](/img/lstm_model_plot.png)
 
 ### GRU
+Gated Recurrent Unit
+
 For training the model, execute the train_gru.py as described below:
 
 ```bash
 python train_gru.py -n 10 -e 5 -b 10
 ```
 
-The model now can be retrained you have to selected the weights file from which the training of the model continues.
+The model now can be retrained, you have to selected the weights file from which the training of the model continues.
+
+
 You can add the same arguments as the train.py script.
 The re_train.py script contains the same default as the normal train.script
 
