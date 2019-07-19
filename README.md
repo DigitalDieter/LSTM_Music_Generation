@@ -74,12 +74,15 @@ python check_system_setup.py
 Type the following command into the terminal:
 
 ```bash
-python convert_directory.py``
+python convert_directory.py
 ```
 
 ![check_sys](img/convert_directory.png)
 
 Converts mp3 --> mono files --> WAV file --> Numpy Tensors
+
+input:  ./datasets/training_data/tmp/Happy.mp3
+        (44.1 kHz, 1 channel, MPEG-1 Layer III
 
 Numpy Tensors INPUT for our LSTM  model.
 
