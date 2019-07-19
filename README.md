@@ -163,3 +163,10 @@ python generate.py
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
 The generated WAV files saved in the directory gen_songs/generated_song1.wav
+
+
+![gen_song1](img/generated_song1.png)
+![gen_song2](img/generated_song2.png)
+![gen_song3](img/generated_song3.png)
+![gen_song4](img/generated_song4.png)
+![gen_song5](img/generated_song5.png)
