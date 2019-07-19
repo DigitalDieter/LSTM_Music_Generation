@@ -124,7 +124,7 @@ compared against the expected output and the errors are back-propagated, thus ad
 ### GRU
 Gated Recurrent Unit
 
-For training the model, execute the train_gru.py as described below:
+For training the GRU model, execute the train_gru.py as described below:
 
 ```bash
 python train_gru.py -n 10 -e 5 -b 10
