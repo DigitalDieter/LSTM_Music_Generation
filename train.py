@@ -59,6 +59,7 @@ MODEL = network_utils.create_lstm_network(FREQ_SPACE_DIMS=FREQ_SPACE_DIMS,
 print('Starting training!')
 WEIGHTS_PATH = 'weights/LSTM_NP_Weights_Iter-' + str(NUM_ITERS)
 WEIGHTS_NAME = 'LSTM_NP_Weights_Iter-' + str(NUM_ITERS)
+LOSS_FILE =  'losses/lstm_loss_iter-' + str(NUM_ITERS)
 
 LOSS = []
 
@@ -66,7 +67,8 @@ while CUR_ITER < NUM_ITERS:
     print('Iteration: ' + str(CUR_ITER))
     HISTORY = MODEL.fit(X_TRAIN, Y_TRAIN, batch_size=BATCH_SIZE, epochs=EPOCHS_PER_ITER, verbose=1, validation_split=0.0)
     LOSS += HISTORY.history['loss']
-    with open('lstm_losslist.txt', 'a') as filehandle:
+
+    with open(LOSS_FILE, 'w') as filehandle:
         for listitem in LOSS:
             filehandle.write('%s\n' % listitem)
     CUR_ITER += 1
