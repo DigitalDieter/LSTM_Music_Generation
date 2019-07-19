@@ -115,6 +115,9 @@ python re_train.py
 # Visualized LSTM model
 ![lstm_model](/img/lstm_model_plot.png)
 
+An LSTM model was build that generates a sequence of notes which is
+compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the LSTM.
+
 ### GRU
 Gated Recurrent Unit
 
@@ -134,8 +137,11 @@ The re_train.py script contains the same default as the normal train.script
 python re_train_gru.py
 ```
 
-An LSTM model was build that generates a sequence of notes which is
-compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the LSTM.
+# Visualized GRU model
+![GRU_Model](/img/gru_model_plot.png)
+
+An GRU model was build that generates a sequence of notes which is
+compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the GRU.
 
 ## Step 4: Generating the music
 
@@ -145,9 +151,6 @@ Type the following command in your terminal':
 ```bash
 python generate.py
 ```
-
-# Visualized GRU model
-![GRU_Model](/img/gru_model_plot.png)
 
 After executing the generation, you have to select the Numpy weights file from which the audio sequence is generated (use arrow keys for selecting)
 
