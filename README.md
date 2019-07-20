@@ -201,7 +201,7 @@ var html5medialPlugin = window.markdownitHTML5Embed;
 md.use(html5medialPlugin, { html5embed: { useLinkSyntax: true } });
 md.render(text);
 
-[Sample audio](/Audio/glass_ping-Go445-1207030150.mp3)
+[Sample audio](datasets/training_data/Happy.mp3)
 
 (datasets/training_data/Happy.mp3)
 
