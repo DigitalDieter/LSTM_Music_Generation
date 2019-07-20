@@ -116,6 +116,11 @@ The model now can be retrained, you have to selected the weights file from which
 python re_train.py
 ```
 
+![GEN_MUSIC](img/chooe_file_for_gen_music.png)
+
+After executing the re_train script, you have to select the Numpy weights file which is used as input for retraining (use arrow keys for selecting)
+
+
 # Visualized LSTM model
 ![lstm_model](/img/lstm_model_plot.png)
 
@@ -141,7 +146,6 @@ The re_train.py script contains the same default as the normal train.script
 python re_train_gru.py
 ```
 
-![GEN_MUSIC](img/chooe_file_for_gen_music.png)
 
 After executing the re_train script, you have to select the Numpy weights file which is used as input for retraining (use arrow keys for selecting)
 
