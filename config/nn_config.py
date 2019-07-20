@@ -10,6 +10,13 @@ def get_neural_net_configuration():
 
     # The weights filename for saving/loading trained models
     nn_params['stateful'] = False
+
+    if not os.path.exists('losses'):
+        os.makedirs("losses")
+        nn_params['lossfile_basename'] = 'LSTM_loss_iter-'
+    else:
+        nn_params['lossfile_basename'] = 'LSTM_loss_iter-'
+
     if not os.path.exists('weights'):
         os.makedirs("weights")
         nn_params['model_basename'] = 'weights/np_weights_iter-'
