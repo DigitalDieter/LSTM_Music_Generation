@@ -177,7 +177,7 @@ loss & generated_song after 10 iterations
 ![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10_resized.jpg)
 ![gen_song1](img/generated_song1.png)
 
-| [![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10_resized.jpg)]| [![gen_song1](img/generated_song1.png)]
+| ![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10_resized.jpg)| ![gen_song1](img/generated_song1.png)
 |:---:|:---:|
 
 loss & generated_song after 25 iterations
