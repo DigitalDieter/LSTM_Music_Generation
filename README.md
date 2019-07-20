@@ -60,16 +60,17 @@ python -m pip install -r requirements.txt
 Execute the following command in your command line:
 Your output should loke similar like the one below.
 
-![check_system_setup](/img/check-sys_setup.png)
 
 ```bash
 python check_system_setup.py
 
 ```
 
+![check_system_setup](/img/check-sys_setup.png)
+
 
 ### Step 2: Converting mp3 files
-#into np tensors
+
 
 Type the following command into the terminal:
 
