@@ -189,6 +189,5 @@ loss & generated_song after 100 iterations
 Generated song after 200 iterations
 ![gen_song5](img/generated_song5.png)
 
-![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
 
 The increased number of the iterations improves the result but also increase the time of training the model.
