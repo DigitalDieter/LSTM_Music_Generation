@@ -168,21 +168,21 @@ The generated WAV files saved in the directory gen_songs/generated_song1.wav
 
 WAV Plots of the generated songs after specific number of iterations:
 
-Training amd generated_song after 10 iterations
+loss & generated_song after 10 iterations
 ![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
 
 ![gen_song1](img/generated_song1.png)
 
-Generated song after 25 iterations
+loss & generated_song after 25 iterations
 ![LSTM_NP_Weights_Iter-25](img/LSTM_NP_Weights_Iter-25.png)
 
 ![gen_song2](img/generated_song2.png)
 
-Generated song after 50 iterations
+loss & generated_song after 50 iterations
 ![LSTM_NP_Weights_Iter-50](img/LSTM_NP_Weights_Iter-50.png)
 ![gen_song3](img/generated_song3.png)
 
-Generated song after 100 iterations
+loss & generated_song after 100 iterations
 ![LSTM_NP_Weights_Iter-100](img/LSTM_NP_Weights_Iter-100.png)
 ![gen_song4](img/generated_song4.png)
 
@@ -192,21 +192,3 @@ Generated song after 200 iterations
 ![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
 
 The increased number of the iterations improves the result but also increase the time of training the model.
-
-[elephant](datasets/training_data/Happy.mp3)
-
-var md = window.markdownit({});
-
-var html5medialPlugin = window.markdownitHTML5Embed;
-md.use(html5medialPlugin, { html5embed: { useLinkSyntax: true } });
-md.render(text);
-
-[Sample audio](datasets/training_data/Happy.mp3)
-
-(datasets/training_data/Happy.mp3)
-
-<audio controls="controls">
-  <source type="audio/mp3" src="filename.mp3"></source>
-  <source type="audio/ogg" src="filename.ogg"></source>
-  <p>Your browser does not support the audio element.</p>
-</audio>
