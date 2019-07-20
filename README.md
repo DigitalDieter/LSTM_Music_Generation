@@ -192,3 +192,9 @@ Generated song after 200 iterations
 ![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
 
 The increased number of the iterations improves the result but also increase the time of training the model.
+
+<audio controls="controls">
+  <source type="audio/mp3" src="filename.mp3"></source>
+  <source type="audio/ogg" src="filename.ogg"></source>
+  <p>Your browser does not support the audio element.</p>
+</audio>
