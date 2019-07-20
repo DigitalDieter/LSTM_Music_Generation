@@ -13,9 +13,9 @@ def get_neural_net_configuration():
 
     if not os.path.exists('losses'):
         os.makedirs("losses")
-        nn_params['lossfile_basename'] = 'LSTM_loss_iter-'
+        nn_params['lossfile_basename'] = 'losses/LSTM_loss_iter-'
     else:
-        nn_params['lossfile_basename'] = 'LSTM_loss_iter-'
+        nn_params['lossfile_basename'] = 'losses/LSTM_loss_iter-'
 
     if not os.path.exists('weights'):
         os.makedirs("weights")
