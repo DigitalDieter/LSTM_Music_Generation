@@ -168,19 +168,27 @@ The generated WAV files saved in the directory gen_songs/generated_song1.wav
 
 WAV Plots of the generated songs after specific number of iterations:
 
-Generated song after 10 iterations
+Training amd generated_song after 10 iterations
+![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
+
 ![gen_song1](img/generated_song1.png)
 
 Generated song after 25 iterations
+![LSTM_NP_Weights_Iter-25](img/LSTM_NP_Weights_Iter-25.png)
+
 ![gen_song2](img/generated_song2.png)
 
 Generated song after 50 iterations
+![LSTM_NP_Weights_Iter-50](img/LSTM_NP_Weights_Iter-50.png)
 ![gen_song3](img/generated_song3.png)
 
 Generated song after 100 iterations
+![LSTM_NP_Weights_Iter-100](img/LSTM_NP_Weights_Iter-100.png)
 ![gen_song4](img/generated_song4.png)
 
 Generated song after 200 iterations
 ![gen_song5](img/generated_song5.png)
+
+![LSTM_NP_Weights_Iter-10](img/LSTM_NP_Weights_Iter-10.png)
 
 The increased number of the iterations improves the result but also increase the time of training the model.
