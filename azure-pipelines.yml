@@ -37,5 +37,5 @@ steps:
 
 - script: | 
     python check_system_setup.py 
-  after_failure: 
+  
 
