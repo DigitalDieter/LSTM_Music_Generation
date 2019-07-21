@@ -34,3 +34,7 @@ steps:
     pip install pytest pytest-azurepipelines
     pytest
   displayName: 'pytest'
+
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'check_system_setup.py'
