@@ -16,4 +16,4 @@ steps:
   displayName: 'Use Python $(python.version)'
 
 - script: |
-    apt install -y lame sox
+    sudo apt install -y lame sox
