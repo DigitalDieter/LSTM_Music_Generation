@@ -1,16 +1,9 @@
-language: python
-matrix:
-  include:
-    - python: "3.7"
-      dist: xenial
-      sudo: true
-#cache: pip
-before_install:
-  - sudo apt-get install -y lame sox
-install:
-  - pip install -r requirements.txt
-script:
-  - python create_dir.py
-  - python convert_directory.py
-  - python train.py
-  - python train_gru.py
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-xenial'
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
