@@ -9,5 +9,8 @@ strategy:
       python.version: '3.7'
       ubuntu.version:  xenial
 
-script:
-  - python create_dir.py
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
