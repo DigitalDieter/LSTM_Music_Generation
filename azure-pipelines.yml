@@ -2,8 +2,9 @@ trigger:
 - master
 
 pool:
-  vmImage: xenial
+  vmImage: 'ubuntu-latest'
 strategy:
   matrix:
     Python37:
       python.version: '3.7'
+      ubuntu.version:  xenial
