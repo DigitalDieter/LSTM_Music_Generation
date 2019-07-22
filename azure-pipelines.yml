@@ -8,3 +8,6 @@ strategy:
     Python37:
       python.version: '3.7'
       ubuntu.version:  xenial
+
+script:
+  - python create_dir.py
