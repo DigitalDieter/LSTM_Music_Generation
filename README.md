@@ -1,4 +1,5 @@
 This repository is based on the code https://github.com/unnati-xyz/music-generation
+[![Build Status](https://dev.azure.com/devops-michael/pwsh_tester/_apis/build/status/DigitalDieter.LSTM_Music_Generation?branchName=master)](https://dev.azure.com/devops-michael/pwsh_tester/_build/latest?definitionId=2&branchName=master)
 
 [![Build Status](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation.svg?branch=master)](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation)
 
