@@ -29,5 +29,8 @@ steps:
     python -m pip install --upgrade pip
     pip install -r requirements.txt
     python create_dir.py
+    python convert_directory.py
+    python train.py
+    python train_gru.py
   displayName: 'Install dependencies'
 
