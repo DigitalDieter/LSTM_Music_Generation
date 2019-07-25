@@ -80,15 +80,14 @@ python convert_directory.py
 
 ![check_sys](img/convert_directory.png)
 
-Converts mp3 --> mono files --> WAV file --> Numpy Tensors
 
-input:  ./datasets/training_data/tmp/Happy.mp3
-        (44.1 kHz, 1 channel, MPEG-1 Layer III
+Trouble shooting: if you get this error:
 
-Numpy Tensors INPUT for our LSTM  model.
+``line 136, in convert_sample_blocks_to_np_audio
+    song_np = np.concatenate(blocks)
+ValueError: need at least one array to concatenate`line``
 
-The "np_array_x.npy" contains the input sequence for training
-And the "np_array_y.npy contains the same sequence but shifted by one block
+install lame sox
 
 
 ### Step 3: Training the model
