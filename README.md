@@ -256,4 +256,4 @@ Generated song after 200 iterations
 ![gen_song5](img/generated_song5.png)
 
 
-The increased number of the iterations improves the result but also increase the time of training the model.
+The increased number of iterations improves the result but also increase the time of training the model.
