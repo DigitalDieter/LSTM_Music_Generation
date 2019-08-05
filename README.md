@@ -1,8 +1,9 @@
-[![Build Status](https://dev.azure.com/devops-michael/pwsh_tester/_apis/build/status/DigitalDieter.LSTM_Music_Generation?branchName=master)](https://dev.azure.com/devops-michael/pwsh_tester/_build/latest?definitionId=2&branchName=master)
+# LSTM music-generation
 
+[![Build Status](https://dev.azure.com/devops-michael/pwsh_tester/_apis/build/status/DigitalDieter.LSTM_Music_Generation?branchName=master)](https://dev.azure.com/devops-michael/pwsh_tester/_build/latest?definitionId=2&branchName=master)
 [![Build Status](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation.svg?branch=master)](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation)
 
-# LSTM music-generation
+
 
 In this project, I used Recurrent Neural Networks (RNNs) to generate music algorithmically. To get it to work, I converted old, Theano-based code from https://github.com/unnati-xyz/music-generation to use Python 3.7 and Tensorflow 1.14.0.
 
@@ -194,7 +195,7 @@ For training the GRU model, execute the train_gru.py as described below:
 python train_gru.py -n 10 -e 5 -b 10
 ```
 
-The model now can be retrained, you have to selected the weights file from which the training of the model continues.
+The model now can be retrained. You have to select the weights file from which the training of the model continues.
 
 
 You can add the same arguments as the train.py script.
