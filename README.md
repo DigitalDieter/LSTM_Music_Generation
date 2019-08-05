@@ -10,9 +10,10 @@ The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM)
 The original code was using Python 3.5, Keras version 0.1.0 and the Theano backend.
 The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4 on Python 3.7.3
 
-##### Addded the following features /  little imporvments to the project:
+##### AAdded the following features / little improvements to the project:
 
-- Every new generated song will be auto incremented saved. No more editing of the generated song in the generation scipt needed
+
+- Every new generated song will be auto-incremented saved. No more editing of the generated song in the generation script needed.
 
 - Extension of the training script with "argparse" parameters for easier handling
 - Function extension to retrain the model to a specific weight file.
