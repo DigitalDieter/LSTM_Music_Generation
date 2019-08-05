@@ -210,7 +210,7 @@ After executing the re_train script, you have to select the Numpy weights file w
 # Visualized GRU model
 ![GRU_Model](/img/gru_model_plot.png)
 
-An GRU model was build that generates a sequence of notes which is
+A GRU model was build that generates a sequence of notes which is
 compared against the expected output and the errors are back-propagated, thus adjusting the parameters learned by the GRU.
 
 ## Step 4: Generating the music
