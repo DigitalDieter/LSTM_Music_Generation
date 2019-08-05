@@ -19,7 +19,7 @@ The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM)
 - Function extension to generate the song with specific weight file.
 - Code restructure that save the outputs to own folders
 - Plotting and saving the loss for each training as a picture in the weight's path
-- re_train.py add to retrain the modle
+- re_train.py add to retrain the model
 - GRU model added
 
 ## Installation / Dependencies
