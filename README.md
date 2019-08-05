@@ -4,11 +4,8 @@
 
 In this project, I used Recurrent Neural Networks (RNNs) to generate music algorithmically. To get it to work, I converted old, Theano-based code from https://github.com/unnati-xyz/music-generation to use Python 3.7 and Tensorflow 1.14.0.
 
-The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses .wav  as an input and generates Numpy Tensor as an output. I trained it for ZZZZ on a QQQQ machine.
+The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses wav file as an input and generates Numpy Tensor as an output. I trained it for 1000 iterations on a Ubuntu 18.04  VPS  Intel® Xeon® E5-2620v3, E5-2630v4
 
-
-The original code was using Python 3.5, Keras version 0.1.0 and the Theano backend.
-The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4 on Python 3.7.3
 
 ##### AAdded the following features / little improvements to the project:
 
