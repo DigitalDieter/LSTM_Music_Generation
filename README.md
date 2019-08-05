@@ -24,10 +24,9 @@ The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4 on Python 3.7.3
 - GRU model added
 
 ## Installation / Dependencies
+You need to install the following packages as dependencies. For more information, visit the project websites.
 
-You need to install the following packages as dependencies. For more information visit the project websites
-
-- LAME is a high quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL [website][f25fc56f]
+- LAME is a high-quality MPEG Audio Layer III (MP3) encoder licensed under the LGPL [website][f25fc56f]
 - SoX - Sound eXchange, the Swiss Army knife of sound processing programs [website][43594682]
 
   [f25fc56f]: http://lame.sourceforge.net "lame-website"
@@ -119,8 +118,7 @@ cp /home/michel/coding/tensorflow/bazel-bin/tensorflow/libtensorflow.so.1.14.0
 
 ### Step 1: Check system setup
 
-Execute the following command in your command line:
-Your output should loke similar like the one below.
+Execute the following command in your command line: Your output should loke similar like the one below.
 
 
 ```bash
@@ -135,6 +133,7 @@ python check_system_setup.py
 
 
 Type the following command into the terminal:
+
 
 ```bash
 python convert_directory.py
@@ -154,8 +153,7 @@ install lame sox
 
 ### Step 3: Training the model
 
-You can change the number of Iterations,
-Epochs per iteration and batch size by adjusting the following parameters:
+You can change the number of Iterations, Epochs per iteration, and batch size by adjusting the following parameters:
 
 - n = Number of Iterations (default=5)
 - e = Epochs per iteration (default=3)
@@ -172,14 +170,14 @@ python train.py -n 10 -e 5 -b 10
 
 ![train](/img/train.png)
 
-The model now can be retrained, you have to selected the weights file from which the training of the model continues.
+The model now can be retrained. You have to select the weights file from which the training of the model continues.
 ```bash
 python re_train.py
 ```
 
 ![GEN_MUSIC](img/chooe_file_for_gen_music.png)
 
-After executing the re_train script, you have to select the Numpy weights file which is used as input for retraining (use arrow keys for selecting)
+After executing the re_train script, you have to select the Numpy weights file, which is used as input for retraining (use arrow keys for selecting).
 
 
 # Visualized LSTM model
