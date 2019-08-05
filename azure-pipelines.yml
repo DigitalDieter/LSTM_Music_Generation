@@ -21,4 +21,4 @@ steps:
     python create_dir.py
     python convert_directory.py
     python train.py
-    python train_gru.py
+#   python train_gru.py
