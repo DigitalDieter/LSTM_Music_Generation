@@ -1,0 +1,24 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    Python37:
+      python.version: '3.7'
+      ubuntu.version:  xenial
+
+steps:
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '$(python.version)'
+  displayName: 'Use Python $(python.version)'
+
+- script: |
+    sudo apt install -y lame sox
+    pip install -r requirements.txt
+    python create_dir.py
+    python convert_directory.py
+    python train.py
+    python train_gru.py
