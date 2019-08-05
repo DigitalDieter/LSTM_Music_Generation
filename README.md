@@ -9,7 +9,7 @@ In this project, I used Recurrent Neural Networks (RNNs) to generate music algor
 The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses wav file as an input and generates Numpy Tensor as an output. I trained it for 1000 iterations on a Ubuntu 18.04  VPS  Intel® Xeon® E5-2620v3, E5-2630v4
 
 
-##### AAdded the following features / little improvements to the project:
+##### Added the following features / little improvements to the project:
 
 
 - Every new generated song will be auto-incremented saved. No more editing of the generated song in the generation script needed.
