@@ -1,12 +1,11 @@
-This repository is based on the code https://github.com/unnati-xyz/music-generation
-
 [![Build Status](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation.svg?branch=master)](https://travis-ci.org/DigitalDieter/LSTM_Music_Generation)
 
-# lstm music-generation
+# LSTM music-generation
 
+In this project, I used Recurrent Neural Networks (RNNs) to generate music algorithmically. To get it to work, I converted old, Theano-based code from https://github.com/unnati-xyz/music-generation to use Python 3.7 and Tensorflow 1.14.0.
 
-Algorithmic music generation using Recurrent Neural Networks (RNNs,)
-The underlying model is a Many-to-Many Long Short Term Memory  (LSTM) with a TimeDistributed Layer.
+The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses .wav  as an input and generates Numpy Tensor as an output. I trained it for ZZZZ on a QQQQ machine.
+
 
 The original code was using Python 3.5, Keras version 0.1.0 and the Theano backend.
 The code was modifiyed to use TensorFlow 1.14.0 and Keras 2.2.4 on Python 3.7.3
@@ -53,6 +52,68 @@ pip install -r requirements.txt
 python -m pip install -r requirements.txt
 ```
 
+Build TensorFlow binary from scratch: Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+```bash
+# Dependencies
+sudo apt install -y pkg-config zip g++ zlib1g-dev unzip python3
+
+# Dowmöpad bazel installer script
+wget https://github.com/bazelbuild/bazel/releases/download/0.26.1/bazel-0.26.1-installer-linux-x86_64.sh
+
+# Make it executeale
+chmod +x bazel-0.26.1-installer-linux-x86_64.sh
+
+# Run the script with --user flag
+./bazel-0.26.1-installer-linux-x86_64.sh --user
+
+# Export path
+export PATH="$PATH:$HOME/bin"
+
+# Install openjdk-11-jdk
+sudo apt update && apt install -y openjdk-11-jdk
+
+# Add bazel to repository
+echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
+
+# Install bazel
+sudo apt update && apt install bazel
+
+#Git clone tensorflow
+git clone https://github.com/tensorflow/tensorflow.git
+
+# Change directory
+cd tensorflow
+
+# Conigure the build
+./configure
+
+# Build tensorflow libtensorflow with bazel
+bazel build --config=monolithic //tensorflow/tools/lib_package:libtensorflow
+
+bazel build -c opt --copt=-march=native --copt=-mfpmath=both --config=cuda -k //tensorflow/tools/pip_package:build_pip_package
+
+bazel build -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
+
+bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+
+
+gcc: error: unrecognized argument in option '-mfpmath=bothu'
+
+
+INFO: From Compiling external/snappy/snappy.cc:
+cc1plus: warning: command line option '-Wno-implicit-function-declaration' is valid for C/ObjC but not for C++
+Target //tensorflow/tools/lib_package:libtensorflow up-to-date:
+  bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz
+INFO: Elapsed time: 19606.827s, Critical Path: 1330.70s
+INFO: 6080 processes: 6080 local.
+INFO: Build completed successfully, 6115 total actions
+
+cp bazel-bin/tensorflow/libtensorflow.so ~/myproject/node_modules/@tensorflow/tfjs-node/build/Release/
+
+cp /home/michel/coding/tensorflow/bazel-bin/tensorflow/libtensorflow.so.1.14.0
+
+```
 
 
 ### Step 1: Check system setup
