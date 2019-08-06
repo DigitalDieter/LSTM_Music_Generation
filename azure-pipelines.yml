@@ -16,8 +16,7 @@ steps:
   displayName: 'Use Python $(python.version)'
 
 
-
-script: |
+- script: |
     sudo apt install -y lame sox
 #    pip install -r requirements.txt
  #0   python create_dir.py
