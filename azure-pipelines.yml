@@ -15,11 +15,10 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
-before_install:
-   - sudo apt-get install -y lame sox
 
-#script: |
-#    sudo apt install -y lame sox
+
+script: |
+    sudo apt install -y lame sox
 #    pip install -r requirements.txt
  #0   python create_dir.py
 #    python convert_directory.py
