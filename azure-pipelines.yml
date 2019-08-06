@@ -19,8 +19,8 @@ steps:
 - script: |
     sudo apt update
     sudo apt install -y lame sox
-#    pip install -r requirements.txt
- #0   python create_dir.py
-#    python convert_directory.py
-#    python train.py
-#   python train_gru.py
+    pip install -r requirements.txt
+    python create_dir.py
+    python convert_directory.py
+    python train.py
+    python train_gru.py
