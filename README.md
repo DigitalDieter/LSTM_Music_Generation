@@ -52,7 +52,10 @@ pip install -r requirements.txt
 python -m pip install -r requirements.txt
 ```
 
-Build TensorFlow binary from scratch: Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+##### Build TensorFlow binary from scratch (optional)
+Why should I compile the Tensorflow myself? To increase the performance and to eliminate the warning message "...TensorFlow binary was not compiled to use: AVX2 FMA...""
+
+First step is to install the dependencies for building the binary
 ```bash
 # Dependencies
 sudo apt install -y pkg-config zip g++ zlib1g-dev unzip python3
@@ -77,7 +80,7 @@ echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" |
 curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
 
 # Install bazel
-sudo apt update && apt install bazel
+sudo apt update && apt install bazel screen
 
 #Git clone tensorflow
 git clone https://github.com/tensorflow/tensorflow.git
@@ -89,30 +92,11 @@ cd tensorflow
 ./configure
 
 # Build tensorflow libtensorflow with bazel
-bazel build --config=monolithic //tensorflow/tools/lib_package:libtensorflow
+screen  -dmS BAZEL bazel build -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
 
-bazel build -c opt --copt=-march=native --copt=-mfpmath=both --config=cuda -k //tensorflow/tools/pip_package:build_pip_package
-
-bazel build -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
-
-bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
-
-
-gcc: error: unrecognized argument in option '-mfpmath=bothu'
-
-
-INFO: From Compiling external/snappy/snappy.cc:
-cc1plus: warning: command line option '-Wno-implicit-function-declaration' is valid for C/ObjC but not for C++
-Target //tensorflow/tools/lib_package:libtensorflow up-to-date:
-  bazel-bin/tensorflow/tools/lib_package/libtensorflow.tar.gz
-INFO: Elapsed time: 19606.827s, Critical Path: 1330.70s
-INFO: 6080 processes: 6080 local.
-INFO: Build completed successfully, 6115 total actions
-
-cp bazel-bin/tensorflow/libtensorflow.so ~/myproject/node_modules/@tensorflow/tfjs-node/build/Release/
-
-cp /home/michel/coding/tensorflow/bazel-bin/tensorflow/libtensorflow.so.1.14.0
-
+bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+pip uninstall tensorflow
+pip install /tmp/tensorflow_pkg/tensorflow-1.14.0-cp37-cp37m-linux_x86_64.whl
 ```
 
 
