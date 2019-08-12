@@ -53,35 +53,49 @@ python -m pip install -r requirements.txt
 ```
 
 ##### Build TensorFlow binary from scratch (optional)
-Why should I compile the Tensorflow myself? To increase the performance and to eliminate the warning message "...TensorFlow binary was not compiled to use: AVX2 FMA...""
+Why should I compile the Tensorflow myself? To increase the performance and to eliminate the warning message "...TensorFlow binary was not compiled to use: AVX2 FMA...".
 
-First step is to install the dependencies for building the binary
+First step is to install the dependencies for building the binary.
 ```bash
 # Dependencies
 sudo apt install -y pkg-config zip g++ zlib1g-dev unzip python3
+```
+Download the bazel installer script. The bazel version has to be >= 0.26 newer versions doesen't work.
 
-# Dowmöpad bazel installer script
+```bash
+# Download bazel installer script
 wget https://github.com/bazelbuild/bazel/releases/download/0.26.1/bazel-0.26.1-installer-linux-x86_64.sh
-
+```
+Make the script executeable and run it with --user flag.
+```bash
 # Make it executeale
 chmod +x bazel-0.26.1-installer-linux-x86_64.sh
 
 # Run the script with --user flag
 ./bazel-0.26.1-installer-linux-x86_64.sh --user
-
+```
+Export path
+```bash
 # Export path
 export PATH="$PATH:$HOME/bin"
+```
 
+Install openjdk-11
+```bash
 # Install openjdk-11-jdk
 sudo apt update && apt install -y openjdk-11-jdk
-
+```
+Add bazel-apt to the repositorys update your system and install bazel and screen from package manager.
+```bash
 # Add bazel to repository
 echo "deb [arch=amd64] https://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
 curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add -
 
 # Install bazel
 sudo apt update && apt install bazel screen
-
+```
+Clone tensorflow repository and change to the directory.
+```bash
 #Git clone tensorflow
 git clone https://github.com/tensorflow/tensorflow.git
 
