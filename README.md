@@ -7,7 +7,7 @@
 
 In this project, I used Recurrent Neural Networks (RNNs) to generate music algorithmically. To get it to work, I converted old, Theano-based code from https://github.com/unnati-xyz/music-generation to use Python 3.7 and Tensorflow 1.14.0.
 
-The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses WAV file as an input and generates Numpy Tensor as an output. I trained it for 1000 iterations on a Ubuntu 18.04  VPS  Intel® Xeon® E5-2620v3, E5-2630v4
+The underlying Keras 2.2.4 model is a Many-to-Many Long Short Term Memory (LSTM) with a TimeDistributed Layer. It uses WAV file as an input and generates Numpy Tensor as an output. I trained it for 1000 iterations on a Ubuntu 18.04  VPS  Intel® Xeon® E5-2620v3, E5-2630v4.
 
 
 ##### Added the following features / little improvements to the project:
@@ -101,15 +101,28 @@ git clone https://github.com/tensorflow/tensorflow.git
 
 # Change directory
 cd tensorflow
-
+```
+Configure your build trough an interactive screen.
+```bash
 # Conigure the build
 ./configure
-
+```
+Now we are building our own tensorflow pip package with the AVX2 FMA features. We are using the package screen because the build took on my system about 10 hours. Every time you lose the connection to your remote system the build was failing. With screen you put the build process into background and it continous until its done.
+```bash
 # Build tensorflow libtensorflow with bazel
 screen  -dmS BAZEL bazel build -c opt --copt=-march=native //tensorflow/tools/pip_package:build_pip_package
+```
+In this step we are copying our build package to /tmp/tensorflow_pkg.
 
+```bash
 bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+```
+Uninstall existing tensorflow version.
+```bash
 pip uninstall tensorflow
+```
+Install our own from scratch builded package.
+```bash
 pip install /tmp/tensorflow_pkg/tensorflow-1.14.0-cp37-cp37m-linux_x86_64.whl
 ```
 
