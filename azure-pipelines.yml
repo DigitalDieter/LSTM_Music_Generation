@@ -15,7 +15,9 @@ steps:
     versionSpec: '$(python.version)'
   displayName: 'Use Python $(python.version)'
 
+
 - script: |
+    sudo apt update
     sudo apt install -y lame sox
     pip install -r requirements.txt
     python create_dir.py
