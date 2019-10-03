@@ -10,6 +10,10 @@ def get_neural_net_configuration():
 
     # The weights filename for saving/loading trained models
     nn_params['stateful'] = False
+    nn_params['return_sequences'] = True
+    nn_params['loss_function'] = 'mean_squared_error'
+    nn_params['optimizer'] = 'rmsprop'
+    nn_params['metrics'] = ['accuracy']
 
     if not os.path.exists('losses'):
         os.makedirs("losses")
