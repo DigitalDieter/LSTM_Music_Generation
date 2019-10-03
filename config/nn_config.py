@@ -31,6 +31,5 @@ def get_neural_net_configuration():
     nn_params['model_file'] = './datasets/np_array'
     # The dataset directory
     nn_params['dataset_directory'] = './datasets/training_data/'
-
     nn_params['activation'] = 'linear'
     return nn_params
